@@ -9,7 +9,7 @@ function App() {
           React Dictionary App
         </header>
         <main>
-          <Dictionary />
+          <Dictionary defaultKeyword="hello" />
         </main>
         <footer className="App-footer">
           Coded by Jessica Marciniak
