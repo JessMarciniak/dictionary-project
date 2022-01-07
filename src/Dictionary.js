@@ -5,9 +5,8 @@ import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-  let [keyword, setKeyword] = useState(props.defaultKeyword);
+  let [keyword, setKeyword] = useState(null);
   let [results, setResults] = useState(null);
-  let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
   function handleDefinitionResponse(response) {
@@ -37,30 +36,21 @@ export default function Dictionary(props) {
     setKeyword(event.target.value);
   }
 
-  function load() {
-    setLoaded(true);
-    search();
-  }
-  if (loaded) {
-    return (
-      <div className="Dictionary">
-        <section>
-          <h1> What word do you want to look up?</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="search"
-              onChange={handleKeywordChange}
-              placeholder="Enter a word..."
-            ></input>
-          </form>
-          <div className="hint">suggested words: sunset, taco, dog</div>
-        </section>
-        <Results results={results} />
-        <Photos photos={photos} />
-      </div>
-    );
-  } else {
-    load();
-    return "Loading...";
-  }
+  return (
+    <div className="Dictionary">
+      <section>
+        <h1> What word do you want to look up?</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            onChange={handleKeywordChange}
+            placeholder="Enter a word..."
+            autoFocus="on"
+          ></input>
+        </form>
+      </section>
+      <Results results={results} />
+      <Photos photos={photos} />
+    </div>
+  );
 }

@@ -4,8 +4,9 @@
 }
 
 .App-header {
-  color: blue;
+  color: rebeccapurple;
   font-weight: bolder;
+  font-size: 50px;
 }
 
 .App-footer {
@@ -14,7 +15,17 @@
 }
 
 body {
-  background: blanchedalmond;
+  height: 100%;
+  background: linear-gradient(
+    102.7deg,
+    rgb(253, 218, 255) 8.2%,
+    rgb(223, 173, 252) 19.6%,
+    rgb(173, 205, 252) 36.8%,
+    rgb(173, 252, 244) 73.2%,
+    rgb(202, 248, 208) 90.9%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
