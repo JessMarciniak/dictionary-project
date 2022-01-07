@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header text-center mt-5">
-          React Dictionary App
+          React Dictionary
         </header>
         <main>
           <Dictionary defaultKeyword="hello" />
